@@ -1,0 +1,12 @@
+SilverCart\Model\Pages\MyAccountHolder:
+    extensions:
+        - SilverCart\ProductNotification\Extensions\Pages\MyAccountHolderExtension
+SilverCart\Model\Pages\MyAccountHolderController:
+    extensions:
+        - SilverCart\ProductNotification\Extensions\Pages\MyAccountHolderControllerExtension
+SilverCart\Model\Pages\ProductGroupPageController:
+    extensions:
+        - SilverCart\ProductNotification\Extensions\Pages\ProductGroupPageControllerExtension
+SilverCart\Model\Product\Product:
+    extensions:
+        - SilverCart\ProductNotification\Extensions\Product\ProductExtension

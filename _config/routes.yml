@@ -1,0 +1,9 @@
+---
+Name: silvercart-product-notification-routes
+After:
+  - '#rootroutes'
+  - '#coreroutes'
+---
+SilverStripe\Control\Director:
+  rules:
+    'sc-product-notification/opt-in//$OptInID!/$OptInHash!': SilverCart\ProductNotification\Control\NotificationController
