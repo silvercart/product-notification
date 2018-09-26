@@ -5,7 +5,9 @@ namespace SilverCart\ProductNotification\Extensions\Product;
 use SilverCart\Model\Pages\ProductGroupPageController;
 use SilverCart\ProductNotification\Model\StockNotification;
 use SilverStripe\Control\Controller;
+use SilverStripe\ORM\ArrayList;
 use SilverStripe\ORM\DataExtension;
+use SilverStripe\View\ArrayData;
 
 /**
  * Extension for SilverCart Product.
@@ -27,6 +29,27 @@ class ProductExtension extends DataExtension
     private static $has_many = [
         'StockNotifications' => StockNotification::class,
     ];
+    
+    /**
+     * Adds a notification info to a product list template if the product is not
+     * buyable due to stock management.
+     * 
+     * @param ArrayList $data Data to update
+     * 
+     * @return void
+     * 
+     * @author Sebastian Diel <sdiel@pixeltricks.de>
+     * @since 26.09.2018
+     */
+    public function addPluggedInProductListAdditionalData(ArrayList $data)
+    {
+        if ($this->owner->isBuyableDueToStockManagementSettings()) {
+            return;
+        }
+        $data->push(ArrayData::create([
+            'AdditionalData' => $this->owner->renderWith(self::class . "_AdditionalData")
+        ]));
+    }
 
     /**
      * Sends email notifications if the stock changes from 0 to > 0.
@@ -69,5 +92,26 @@ class ProductExtension extends DataExtension
             /* @var $form \SilverCart\ProductNotification\Forms\StockNotificationOptInForm */
             $content .= $form->forTemplate();
         }
+    }
+    
+    /**
+     * Updates the field labels.
+     * 
+     * @param array &$labels Labels to update
+     * 
+     * @return void
+     * 
+     * @author Sebastian Diel <sdiel@pixeltricks.de>
+     * @since 26.09.2018
+     */
+    public function updateFieldLabels(&$labels)
+    {
+        $labels = array_merge(
+                $labels,
+                [
+                    'StockNotificationTitle'    => _t(self::class . '.StockNotificationTitle', 'Get a notification as soon as this product is available for sale again.'),
+                    'StockNotificationLinkText' => _t(self::class . '.StockNotificationLinkText', 'Notify as soon as available'),
+                ]
+        );
     }
 }

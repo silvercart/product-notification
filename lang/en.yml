@@ -2,6 +2,9 @@ en:
     SilverCart\Model\ShopEmail:
         TemplateName_StockNotification: "Customer Notification \"product available\""
         TemplateName_StockNotificationOptIn: "Opt-In Customer Notification \"product available\""
+    SilverCart\ProductNotification\Extensions\Product\ProductExtension:
+        StockNotificationLinkText: "Notify as soon as available"
+        StockNotificationTitle: "Get a notification as soon as this product is available for sale again."
     SilverCart\ProductNotification\Forms\StockNotificationOptInForm:
         NotifyByEmail: "Notify by email as soon as available."
         NotifyByEmailButton: "Notify by email"

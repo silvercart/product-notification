@@ -1,0 +1,1 @@
+<a href="{$Link}" title="{$fieldLabel('StockNotificationTitle')}"><span class="fa fa-envelope-o"></span> {$fieldLabel('StockNotificationLinkText')}</a>
