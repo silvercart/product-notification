@@ -15,5 +15,5 @@ ExampleData::register_email_example_data('StockNotification', function() {
         'Email'        => 'email@example.com',
     ];
 });
-ShopEmail::register_email_template('StockNotification',      StockNotification::singleton()->fieldLabel('EmailTitleStockNotification'));
-ShopEmail::register_email_template('StockNotificationOptIn', StockNotification::singleton()->fieldLabel('EmailTitleStockNotificationOptIn'));
+ShopEmail::register_email_template('StockNotification');
+ShopEmail::register_email_template('StockNotificationOptIn');

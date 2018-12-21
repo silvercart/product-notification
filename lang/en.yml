@@ -1,5 +1,7 @@
 en:
     SilverCart\Model\ShopEmail:
+        Subject_StockNotification: "\"{$Product.Title}\" is available again!"
+        Subject_StockNotificationOptIn: "Please confirm your email address"
         TemplateName_StockNotification: "Customer Notification \"product available\""
         TemplateName_StockNotificationOptIn: "Opt-In Customer Notification \"product available\""
     SilverCart\ProductNotification\Extensions\Product\ProductExtension:
@@ -29,6 +31,7 @@ en:
         EmailTitleStockNotification: "\"{$Product.Title}\" is available again!"
         EmailTitleStockNotificationForTemplate: "\"{product}\" is available again!"
         EmailTitleStockNotificationOptIn: "Please confirm your email address"
+        Locale: "Language"
         Member: "Customer"
         MyStockNotifications: "My Notifications"
         MyStockNotificationsDesc: "If you are interested in a product which is not available right now, you can request a notification as soon as it's ready for sale again."

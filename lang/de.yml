@@ -1,5 +1,7 @@
 de:
     SilverCart\Model\ShopEmail:
+        Subject_StockNotification: "\"{$Product.Title}\" ist wieder lieferbar!"
+        Subject_StockNotificationOptIn: "Bitte bestätigen Sie Ihre E-Mail-Adresse"
         TemplateName_StockNotification: "Kunden-Benachrichtigung \"Artikel lieferbar\""
         TemplateName_StockNotificationOptIn: "Opt-In Kunden-Benachrichtigung \"Artikel lieferbar\""
     SilverCart\ProductNotification\Extensions\Product\ProductExtension:
@@ -29,6 +31,7 @@ de:
         EmailTitleStockNotification: "\"{$Product.Title}\" ist wieder lieferbar!"
         EmailTitleStockNotificationForTemplate: "\"{product}\" ist wieder lieferbar!"
         EmailTitleStockNotificationOptIn: "Bitte bestätigen Sie Ihre E-Mail-Adresse"
+        Locale: "Sprache"
         Member: "Kunde"
         MyStockNotifications: "Meine Benachrichtigungen"
         MyStockNotificationsDesc: "Sollten Sie Sich für einen Artikel interessieren, der zur Zeit nicht lieferbar ist, können Sie Sich benachrichtigen lassen, sobald er wieder auf Lager ist."
